@@ -11,7 +11,7 @@ if __name__ == "__main__":
             G = nx.read_gml(f'../graphs/{dist}/{dist}_{i}.gml')
             results = rewire(G, -1, f'{dist}_{i}', method='max', return_type='summary')
             r_min = results.iloc[0]['r']
-            r_min_preserved = results.iloc[0]['r']
+            r_min_preserved = results.iloc[0]['preserved']
             graph_dict[f'{dist}_{i}']['min'] = r_min
             graph_dict[f'{dist}_{i}']['min_preserved'] = r_min_preserved
             
@@ -19,7 +19,7 @@ if __name__ == "__main__":
             G = nx.read_gml(f'../graphs/{dist}/{dist}_{i}.gml')
             results = rewire(G, 1, f'{dist}_{i}', method='max', return_type='summary')
             r_max = results.iloc[0]['r']
-            r_max_preserved = results.iloc[0]['r']
+            r_max_preserved = results.iloc[0]['preserved']
             graph_dict[f'{dist}_{i}']['max'] = r_max
             graph_dict[f'{dist}_{i}']['max_preserved'] = r_max_preserved
 
