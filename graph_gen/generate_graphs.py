@@ -7,7 +7,7 @@ import networkx as nx
 from degree_preserving_rewiring import generate_graph
 
 if __name__ == "__main__":
-    for dist in ['weibull', 'exponential', 'lognormal']:
+    for dist in ['weibull']:#, 'exponential', 'lognormal']:
         for i in range(1000):
             if dist in ['exponential', 'lognormal', 'weibull']:
                 G = generate_graph(dist, 5, 10000)
